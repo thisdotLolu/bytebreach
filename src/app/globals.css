@@ -2,26 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+.background {
+  background-image: url('../assets/bg1.png'), url('../assets/bg2.png');  
+  background-repeat: no-repeat;
+  /* background-position:  */
+  background-size: 100% 100vh;
+  height: 100vh;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+
+
+.underline-text {
+  text-decoration: none; 
+  position: relative;
+  display: flex;
+  flex-direction: column; 
+  justify-content: flex-end;
+  align-items: center;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+.underline-text:after{
+  content: '';
+  height: 2px;
+  bottom: 0px; 
+  margin: 5px auto;
+  left: 0;
+  right: 0;
+  width: 50%;
+  background: #4A3AFF;
+-o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
 }
+
