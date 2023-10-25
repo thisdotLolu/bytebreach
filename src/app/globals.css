@@ -2,16 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  margin: 0;
+  padding: 0;
+}
+
 
 .background {
   background-image: url('../assets/bg1.png'), url('../assets/bg2.png');  
   background-repeat: no-repeat;
-  /* background-position:  */
-  background-size: 100% 100vh;
-  height: 100vh;
+  background-attachment:fixed; 
+  background-size: 100% 100%;
 }
 
 
+@media screen and (min-height:760px) {
+  .background{
+    height: 100vh;
+  }
+}
 
 .underline-text {
   text-decoration: none; 
@@ -37,5 +46,13 @@
   -moz-transition:.5s;
   -webkit-transition:.5s;
   transition:.5s;
+}
+
+input{
+  font-size:16px;
+}
+
+::placeholder{
+  font-size: 1rem;
 }
 

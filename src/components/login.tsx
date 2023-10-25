@@ -1,6 +1,9 @@
+'use client'
 import React from 'react'
 import { TabComponent } from './ui/tabs'
 import { states } from '@/lib/constants'
+import LogoName from './logoname'
+import { useRouter } from 'next/navigation'
 
 
 const userStates = [
@@ -9,12 +12,20 @@ const userStates = [
 ]
 
 const LoginComponent = () => {
-    
+    const router = useRouter()
+    const clientSignUp=()=>{
+        router.push('/signup/client')
+    }
+    const auditorSignUp=()=>{
+        router.push('/signup/auditor')
+    }
   return (
     <div className=''>
+        <LogoName/>
         <TabComponent
+        tabOneBtnfn={clientSignUp}
+        tabTwoBtnfn={auditorSignUp}
         tabHeaders={userStates}
-        
         />
     </div>
   )
@@ -23,10 +34,3 @@ const LoginComponent = () => {
 export default LoginComponent;
 
 
-const ClientLogin = () =>{
-    return (
-        <div className=''>
-
-        </div>
-    )
-}

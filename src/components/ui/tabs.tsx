@@ -2,6 +2,9 @@
 import { Tab } from '@headlessui/react'
 import SocialLogin from '../social-login'
 import Input from './input'
+import {AiOutlineMail} from 'react-icons/ai'
+import Divider from './divider'
+import Button from './button'
 
 
 function classNames(...classes:any) {
@@ -10,13 +13,21 @@ function classNames(...classes:any) {
 
 interface TabProps {
     tabHeaders:string[],
-    className:string
+    className?:string,
+    defaultIndex?:number,
+    tabOneBtnfn?:()=>void,
+    tabTwoBtnfn?:()=>void
 }
 
-export function TabComponent({tabHeaders}:TabProps) {
+
+
+export function TabComponent({tabHeaders,className, defaultIndex,tabOneBtnfn,tabTwoBtnfn}:TabProps) {
+
   return (
-    <div className='bg-[#F1F1F1] h-[500px] rounded-2xl w-[500px]'>
-    <Tab.Group>
+    <div className='bg-[#F1F1F1] h-[fit-content] rounded-2xl w-[500px]'>
+    <Tab.Group
+    
+    >
       <Tab.List
       className='h-[60px] flex items-end justify-end'
       >
@@ -27,7 +38,7 @@ export function TabComponent({tabHeaders}:TabProps) {
                 classNames(
                   'outline-none w-full flex-1 rounded-2xl h-[60px] text-black font-[900] text-[1.1rem]',
                   selected
-                    ? 'bg-[#F1F1F1] border-b-[#4A3AFF] underline-text'
+                    ? 'bg-[#F1F1F1] underline-text'
                     : 'bg-white pt-[10px]'
                 )
               }
@@ -35,13 +46,38 @@ export function TabComponent({tabHeaders}:TabProps) {
         ))}
         
       </Tab.List>
-      <Tab.Panels className='w-[100%] p-[20px] h-[420px]'>
-        <Tab.Panel className='w-[100%] h-[100%]'>
+      <Tab.Panels className='w-[100%] p-[20px] h-[fit-content]'>
+        <Tab.Panel className='w-[100%] h-[100%] flex flex-col'>
             <SocialLogin/>
-            <hr/>
-            <Input/>
+            <Divider/>
+            <Input
+            imgSrc='/mail.png'
+            placeholder='Email Address'
+            title='Email'
+            />
+            <div className='w-[100%] flex justify-center items-center'>
+            <Button
+            onClick={tabOneBtnfn}
+            className='w-[40%]'
+            >Submit</Button>
+            </div>
+            
         </Tab.Panel>
-        <Tab.Panel>Content 2</Tab.Panel>
+        <Tab.Panel className='w-[100%] h-[100%] flex flex-col'>
+        <SocialLogin/>
+            <Divider/>
+            <Input
+           imgSrc='/mail.png'
+            placeholder='Email Address'
+            title='Email'
+            />
+            <div className='w-[100%] flex justify-center items-center'>
+            <Button
+            onClick={tabTwoBtnfn}
+            className='w-[40%]'
+            >Submit</Button>
+            </div>
+        </Tab.Panel>
       </Tab.Panels>
     </Tab.Group>
     </div>
