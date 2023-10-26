@@ -81,7 +81,7 @@ const Input = ({ placeholder, icon, imgSrc, type, onChange, value, title, inputC
                                     {icon}
                                 </div>
                         }
-                        {(info && showInfo) && <div className='shadow-lg bg-white p-[10px] w-[300px] h-[fit-content] text-center rounded-2xl absolute left-[-100px] text-sm text-[#A0A3BD]'>
+                        {(info && showInfo) && <div className='shadow-lg bg-white p-[10px] w-[300px] h-[fit-content] text-center rounded-2xl absolute md:left-[-100px] left-[-220px] text-sm text-[#A0A3BD]'>
                             {info}
                         </div>}
                     </div>
