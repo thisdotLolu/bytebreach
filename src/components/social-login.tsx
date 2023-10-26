@@ -15,7 +15,7 @@ import Loading from './ui/loading';
 const SocialLogin = () => {
     const router = useRouter()
     const web3auth = new Web3Auth({
-        clientId: "BGj5BZX3QkgeAxx31-UmbocB14H3JaeTh3zjkTIXDxEjcPZXF7l8wNH2Tj0JeurKIZR5pMipODaiYfhjFgBca0U",
+        clientId: process.env.NEXT_PUBLIC_CLIENT_ID as string,
         web3AuthNetwork: "sapphire_devnet",
         chainConfig: {
           chainNamespace: "eip155",
