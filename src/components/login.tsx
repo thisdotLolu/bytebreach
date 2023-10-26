@@ -4,6 +4,7 @@ import { TabComponent } from './ui/tabs'
 import { states } from '@/lib/constants'
 import LogoName from './logoname'
 import { useRouter } from 'next/navigation'
+import { useAppContext } from '@/context/AppContext'
 
 
 const userStates = [
@@ -12,7 +13,9 @@ const userStates = [
 ]
 
 const LoginComponent = () => {
+    const {selectedState} = useAppContext()
     const router = useRouter()
+
     const clientSignUp=()=>{
         router.push('/signup/client')
     }

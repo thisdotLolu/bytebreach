@@ -7,7 +7,7 @@ const Auditor = () => {
   return (
     <div className='h-[100%]'>
     <LogoName/>
-    <div className='bg-white rounded-[25px] h-[fit-content] w-[500px] shadow p-[20px]'>
+    <div className='bg-white rounded-[25px] h-[fit-content] md:w-[500px] w-[100vw] shadow p-[20px]'>
         <h3
         className='font-bold text-[1.3rem]'
         >Contact details</h3>

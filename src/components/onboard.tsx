@@ -9,7 +9,9 @@ const Onboard = () => {
   return (
     <div className='rounded-[25px] bg-white flex flex-col h-[400px] w-[400px] justify-center items-center shadow-2xl  shadow-slate-4
     00'>
-        <Button onClick={()=>router.push('/login')}>
+        <Button 
+        disabled={false}
+        onClick={()=>router.push('/login')}>
             Launch app
         </Button>
     </div>
